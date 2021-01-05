@@ -7,6 +7,7 @@ from player import Player
 
 # create screen object
 screen = t.Screen()
+screen.title('Chess Game')
 screen.setup(width=1300, height=835)  # og 835, 835
 # add all icons to screen
 for image in ['BB', 'KB', 'KnB', 'KnW', 'KW', 'PB', 'PW',
@@ -92,13 +93,11 @@ while True:
             gameboard.positions[piece.board_position].showturtle()
             piece.forward(0)
             screen.onclick(piece.move)
-            # super secret allegra attack
-            piece.ondrag(piece.move)
+            #super secret allegra attack
+            #piece.ondrag(piece.move)
             break
         if piece.taken:
             gameboard.to_graveyard(piece)
-            #piece.to_graveyard()
-            #gameboard.graveyard.append(piece)
 
         else:
             screen.onscreenclick(get_mouse_click_coor)
